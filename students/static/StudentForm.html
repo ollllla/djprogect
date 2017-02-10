@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Сервіс обліку студентів </title>
+<meta name="description"
+      value="Форма обліку студентів навчального закладу"/>
+      <!--Include styles -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.3.6/css/fileinput.css">
+</head>
+<body>
+  <h1> Форма редагування студента </h1>
+  <form class="form-horizontal">
+  <!--Personal detail-->
+<div class="form-group">
+  <label class="control-label col-xs-3" for="Name">Ім'я:</label>
+  <div class="col-xs-9">
+    <input type="text" class="form-control" placeholder="Введіть ім'я:">
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-xs-3" for="fatherName"> По-батькові:</label>
+  <div class="col-xs-9">
+    <input type="text" class="form-control" placeholder="Введіть по-батькові">
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-xs-3" for="SurName"> Фамілія:</label>
+  <div class="col-xs-9">
+    <input type="text" class="form-control" placeholder="Введіть фамілію:">
+  </div>
+</div>
+<!--Date of birth with walidation-->
+
+<div class="form-group">
+          <label class="col-xs-3 control-label"> Дата народження:</label>
+          <div class="col-xs-4">
+              <input type="text" class="form-control" name="birthday" placeholder="DD-MM-YYYY" />
+          </div>
+      </div>
+
+  <script>
+  $(document).ready(function() {
+      $('#profileForm').formValidation({
+          framework: 'bootstrap',
+          icon: {
+              valid: 'glyphicon glyphicon-ok',
+              invalid: 'glyphicon glyphicon-remove',
+              validating: 'glyphicon glyphicon-refresh'
+          },
+          fields: {
+              birthday: {
+                  validators: {
+                      date: {
+                          format: 'DD-MM-YYYY',
+                          message: 'The value is not a valid date'
+                      }
+                  }
+              }
+          }
+      });
+  });
+  </script>
+</div>
+
+<div class="form-group">
+               <label class="control-label col-xs-3" for="text">Фото:</label>
+               <input type="file" class="filestyle" data-input="false">
+
+               </div>
+           </div>
+           
+<div class="form-group">
+    <label class="control-label col-xs-3" for="text"> Група: </label>
+               <div class="col-xs-9">
+                 <select class="form-control">
+                   <option>ДЕ-31</option>
+                   <option>ДЕ-32</option>
+                 </select>
+               </div>
+           </div>
+
+
+</div>
+<div class="form-group">
+    <label class="control-label col-xs-3" for="Note"> Додаткові нотатки:</label>
+    <div class="col-xs-9">
+      <textarea rows="3" class="form-control"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-offset-3 col-xs-9">
+      <input type="submit" class="btn btn-primary" value="Зберегти">
+      <input type="reset" class="btn btn-default" value="Скасувати">
+    </div>
+
+
+
+
+
+
+
+
+
+
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.3.6/js/fileinput.min.js"></script>
+
+</body>
